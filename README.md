@@ -1,8 +1,11 @@
-# Execute FIR code in user BRAM
+# FIR accelerator implementation on Cravarel SoC
+* Implement the firmware and the FIR accelerator based on the existing Cravarel SoC platform.
+* 
 
+# Execute FIR code in user BRAM
 ## Simulation for FIR
 ```sh
-cd ~/caravel-soc_fpga-lab/lab-exmem-fir/testbench/counter_la_fir
+cd ./testbench/counter_la_fir
 source run_clean
 source run_sim
 ```

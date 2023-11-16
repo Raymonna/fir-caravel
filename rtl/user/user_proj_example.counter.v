@@ -13,7 +13,13 @@
 // limitations under the License.
 // SPDX-License-Identifier: Apache-2.0
 
-`default_nettype none
+`default_nettype wire
+
+
+
+`define MPRJ_IO_PADS_1 19	/* number of user GPIO pads on user1 side */
+`define MPRJ_IO_PADS_2 19	/* number of user GPIO pads on user2 side */
+`define MPRJ_IO_PADS (`MPRJ_IO_PADS_1 + `MPRJ_IO_PADS_2)
 /*
  *-------------------------------------------------------------
  *
@@ -79,7 +85,7 @@ module user_proj_example #(
     wire [`MPRJ_IO_PADS-1:0] io_out;
     wire [`MPRJ_IO_PADS-1:0] io_oeb;
 
-    wire [31:0] rdata; 
+ //   wire [31:0] rdata; 
     //wire [31:0] wdata;
     wire [BITS-1:0] count;
 
@@ -107,7 +113,7 @@ module user_proj_example #(
     assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
 	wire counter_ack_o;
-
+/*
     counter #(
         .BITS(BITS)
     ) counter(
@@ -123,9 +129,9 @@ module user_proj_example #(
         .count(count)
     );
 
-
+*/
 reg [31:0] reg_mprj_datal;
-
+reg 	   reg_ap_start;
 always @(posedge clk) begin
 	if(rst) reg_mprj_datal <= 0;
 	else if(wbs_cyc_i && wbs_we_i && (wbs_adr_i == 32'h2600_000c)) begin
@@ -134,7 +140,14 @@ always @(posedge clk) begin
 		reg_mprj_datal <= reg_mprj_datal;
 	end
 end
-
+always @(posedge clk) begin
+	if(rst) reg_ap_start <= 0;
+	else if(wbs_cyc_i && wbs_we_i && (wbs_adr_i == 32'h3000_0000)) begin
+		reg_ap_start <= 1;
+	end else begin
+		reg_ap_start <= 1;
+	end
+end
 
 //1. COEF and ap_start
 wire                        		awready;
@@ -155,6 +168,15 @@ reg                             	sm_tready;
 wire                            	sm_tvalid;
 wire signed [(pDATA_WIDTH-1) : 0]   sm_tdata;
 wire                            	sm_tlast;
+
+//4. Read ap_start
+wire                        		arready;
+reg                         		rready;
+reg                         		arvalid;
+reg         [(pADDR_WIDTH-1): 0] 	araddr;
+wire                        		rvalid;
+wire signed [(pDATA_WIDTH-1): 0] 	rdata;
+
 
 // ram for tap
     wire [3:0]               tap_WE;
@@ -179,12 +201,18 @@ always @(*) begin
 	awvalid = 0;
 	awaddr = 0;
 	wdata = 0;
-	if((wbs_adr_i == 32'h38000040) && wbs_cyc_i && (wbs_we_i)) begin
+	if(((wbs_adr_i >= 32'h38000040) && (wbs_adr_i < 32'h3800_0080)) && wbs_cyc_i && (wbs_we_i)) begin
+		$display("\033[36mcoeff(%x) = %d\033[0m", wbs_adr_i, $signed(wbs_dat_i));
+		wvalid = 1;
+		awvalid = 1;
+		awaddr = {wbs_adr_i[31:6], 6'b000000} + (wbs_adr_i[5:0] >> 2);
+		wdata = wbs_dat_i;
+	end else if(wbs_adr_i == 32'h3000_0000 && wbs_cyc_i && wbs_we_i) begin
 		wvalid = 1;
 		awvalid = 1;
 		awaddr = wbs_adr_i;
-		wdata = wbs_dat_i;
-	end 
+		wdata = 1;
+	end
 end
 
 //2. Xin 
@@ -193,7 +221,8 @@ always @(*) begin
 	ss_tvalid = 0;
 	ss_tdata = 0;
 	ss_tlast = 0;
-	if((wbs_adr_i == 32'h38000080) && wbs_cyc_i && wbs_we_i) begin
+	if((wbs_adr_i == 32'h38000080) && wbs_cyc_i && wbs_we_i && fir_begin_send_x_r) begin
+		//$display("\033[33mXin send value = %d\033[0m", wbs_dat_i);
 		ss_tvalid = 1;
 		ss_tdata = wbs_dat_i;
 	end 
@@ -220,13 +249,62 @@ end
 reg fir_begin_send_x_r;//get Xin from firmware
 reg fir_able_receive_y_r;//send data to firmware
 
+always @(posedge clk) begin
+	if(rst) begin
+		fir_begin_send_x_r <= 0;
+	end else if((ss_tready) && (wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0004)) begin
+		fir_begin_send_x_r <= 1;
+	end else if(ss_tvalid) begin
+		fir_begin_send_x_r <= 0;
+	end
+end
+/*
 always @(*) begin
 	fir_begin_send_x_r = 0;
-	if((wbs_cyc_i) && (wbs_we_i) && (wbs_adr_i == 32'h3000_0004)) begin
+	if((wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0004)) begin
+		//$display("fir_begin_send_x_r get");
+		//ss_tvalid = 1;
 		if(ss_tready) fir_begin_send_x_r = 1;
 	end
 end
+*/
+
 //Yout : sm_tready(input for fir)
+always @(posedge clk) begin
+	if(rst) begin
+		fir_able_receive_y_r <= 0;
+	end else if(wbs_cyc_i && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0008) /*&& (sm_tvalid)*/) begin 
+		fir_able_receive_y_r <= 1;
+	end else if(sm_tready) begin
+		fir_able_receive_y_r <= 0;
+	end else begin
+		fir_able_receive_y_r <= fir_able_receive_y_r;
+	end
+end
+reg sm_tready_r;
+//sm_tready(Yout)
+always @(*) begin
+	sm_tready_r = 0;
+	if(wbs_cyc_i && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0008)) begin
+		sm_tready_r = 1;
+//	end else if(sm_tvalid) begin
+//		sm_tready = 0;
+	end
+end
+
+always @(posedge clk) begin
+	if(rst) begin
+		sm_tready <= 0;
+	end else if(sm_tvalid) begin
+		sm_tready <= 0;
+	end else if(sm_tready_r)begin
+		sm_tready <= 1;
+	end else begin
+		sm_tready <= sm_tready;
+	end
+end
+
+/*
 always @(*) begin
 	sm_tready = 0;
 	fir_able_receive_y_r = 0;
@@ -235,20 +313,28 @@ always @(*) begin
 		if(sm_tvalid) fir_able_receive_y_r = 1;
 	end
 end
-
+*/
 reg [32:0] y_reg;
+reg sm_tvalid_reg;
 always @(posedge clk) begin
 	if(rst) begin
 		y_reg <= 0;
+		sm_tvalid_reg <= 0;
 	end else if(sm_tvalid) begin
 		y_reg <= sm_tdata;
+		sm_tvalid_reg <= sm_tvalid;
+	end else if(sm_tready) begin
+		sm_tvalid_reg <= 0;
 	end else begin
 		y_reg <= y_reg;
 	end
 end
 
+
+
 //5. wbs_dat_o, wbs_ack_o
 //Yout, fir_able_receive_y_r, fir_begin_send_x_r
+
 reg [31:0] wbs_dat_o_r;
 reg wbs_ack_o_r;
 assign wbs_dat_o = wbs_dat_o_r;
@@ -264,19 +350,40 @@ always @(posedge clk) begin
 	end else if((wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0084)) begin
 		wbs_dat_o_r <= y_reg;
 		wbs_ack_o_r <= 1;
-	end else if(fir_begin_send_x_r) begin
+	end else if((wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0004) && ss_tready) begin//fir_begin_send_x
 		wbs_dat_o_r <= 1;
+		wbs_ack_o_r <= 1;
+	end else if( (wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h3000_0008) /*&& sm_tvalid_reg*/) begin //fir_able_receive_y_r
+		//$display("\033[35mfir_able_receive_y_r\033[0m");
+		wbs_dat_o_r <= 1;
+		wbs_ack_o_r <= 1;
+	end else if((wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h38000084) /*&& (sm_tvalid_reg)*/) begin//fir_y_reg in firmware
+		//$display("\033[36mfir_y_reg receive the value %d\033[0m", $signed(y_reg));
+		wbs_dat_o_r <= y_reg;
 		wbs_ack_o_r <= 1;
 	end else if((wbs_cyc_i) && (~wbs_we_i) && (wbs_adr_i == 32'h2600_000c) ) begin
 		wbs_dat_o_r <= reg_mprj_datal >> 16;
-		wbs_ack_o_r <= 0;
+		wbs_ack_o_r <= 1;
+	end else if((wbs_we_i) && (wbs_adr_i == 32'h3000_0000)) begin
+		//$display("\033[34mreg_ap_start read\033[0m");
+		wbs_dat_o_r <= reg_ap_start;
+		wbs_ack_o_r <= 1;
+	end else if(valid) begin
+		wbs_dat_o_r <= wbs_dat_i;
+		wbs_ack_o_r <= 1;
 	end else begin
 		wbs_dat_o_r <= 0;
 		wbs_ack_o_r <= 0;
 	end
 end
-
-
+//DEBUG
+/*
+always @(*) begin
+	if(wbs_adr_i == 32'h3800_0080) begin
+		$display("Xin, wbs_cyc_i = %d, wbs_we_i = %d", wbs_cyc_i, wbs_we_i);
+	end
+end
+*/
 fir fir_DUT(
         .awready(awready),
         .wready(wready),
@@ -285,12 +392,12 @@ fir fir_DUT(
         .wvalid(wvalid),
         .wdata(wdata),
 
-        .arready(),
-        .rready(),
-        .arvalid(),
-        .araddr(),
-        .rvalid(),
-        .rdata(),
+        .arready(arready),
+        .rready(rready),
+        .arvalid(arvalid),
+        .araddr(araddr),
+        .rvalid(rvalid),
+        .rdata(rdata),
 
         .ss_tvalid(ss_tvalid),
         .ss_tdata(ss_tdata),
@@ -317,7 +424,7 @@ fir fir_DUT(
         .data_Do(data_Do),
 
         .axis_clk(clk),
-        .axis_rst_n(rst)
+        .axis_rst_n(~rst)
 );
 
 // RAM for tap

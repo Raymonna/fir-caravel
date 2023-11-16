@@ -36,9 +36,9 @@ extern int* fir();
 #define fir_x_reg (*(volatile uint32_t *)  0x38000080)
 #define fir_y_reg (*(volatile uint32_t *) 0x38000084)
 
-#define fir_ap (*(volatile uint32_t *) 0x30000000)
+#define fir_ap_reg (*(volatile uint32_t *) 0x30000000)
 #define fir_begin_send_x	(*(volatile uint32_t *) 0x30000004)
-#define fir_able_receive_y  (*(volatile uint32_t *) 0x30000004)
+#define fir_able_receive_y  (*(volatile uint32_t *) 0x30000008)
 
 
 void main()
@@ -137,19 +137,47 @@ void main()
 		}
 	}
 */
-/*
+	reg_mprj_datal = (0xa5 << 16);
+
+	fir_ap_reg = 1;
 	for(int i = 0; i < N; i++){
-		*((&fir_coeff_reg) + i) = i;
+		(*(volatile uint32_t *) (0x38000040 + i*4)) = taps[i];//TODO//i;
 	}
+	int cnt_y = 0;
+	int x_val = 1;
+	int tmp_y;
+	while(1){
+		if(fir_begin_send_x){
+			fir_x_reg = x_val;
+			x_val += 1;
+		}
+		if(fir_able_receive_y){
+			tmp_y = fir_y_reg;
+			//reg_mprj_datal = ((tmp_y << 24) + (0xa5 << 16));
+			cnt_y += 1;
+		}
+		if(cnt_y == N-1){
+			if(fir_able_receive_y){
+				reg_mprj_datal = (fir_y_reg << 16);
+			}
+			break;
+		}
+	}
+
+	reg_mprj_datal = (0x5a << 16);
+
+
+	/*
 	for(int i = 0; i < N; i++){
-		for(int j = i; j >= 0; j--){
+		//for(int j = i; j >= 0; j--){
 			while(!fir_begin_send_x);
 			fir_x_reg = i;
-		}
+		//}
 		while(!fir_able_receive_y);
 		reg_mprj_datal = fir_y_reg;
 	}
-*/
+	*/
+
 /*
 	//write down your fir
 	while(!reg_mprj_slave_x_valid);
@@ -183,6 +211,10 @@ void main()
 */
 	//print("\n");
 	//print("Monitor: Test 1 Passed\n\n");	// Makes simulation very long!
+/*
 	reg_mprj_datal = 0xAB510000;
+	reg_mprj_datal = 0xAB520000;
+	reg_mprj_datal = 0xAB510000;
+*/
 }
 

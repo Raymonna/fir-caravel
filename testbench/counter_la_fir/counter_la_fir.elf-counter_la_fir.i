@@ -1,5 +1,5 @@
 # 0 "counter_la_fir.c"
-# 1 "/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir//"
+# 1 "/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir//"
 # 0 "<built-in>"
 # 0 "<command-line>"
 # 1 "counter_la_fir.c"
@@ -1688,6 +1688,34 @@ void main()
 
 
  (*(volatile uint32_t*) ((0xf0000000L + 0x3010L) + 8)) = (*(volatile uint32_t*) ((0xf0000000L + 0x3000L) + 8)) = 0x00000000;
-# 186 "counter_la_fir.c"
- (*(volatile uint32_t*)0x2600000c) = 0xAB510000;
+# 140 "counter_la_fir.c"
+ (*(volatile uint32_t*)0x2600000c) = (0xa5 << 16);
+
+ (*(volatile uint32_t *) 0x30000000) = 1;
+ for(int i = 0; i < 11; i++){
+  (*(volatile uint32_t *) (0x38000040 + i*4)) = taps[i];
+ }
+ int cnt_y = 0;
+ int x_val = 1;
+ int tmp_y;
+ while(1){
+  if((*(volatile uint32_t *) 0x30000004)){
+   (*(volatile uint32_t *) 0x38000080) = x_val;
+   x_val += 1;
+  }
+  if((*(volatile uint32_t *) 0x30000008)){
+   tmp_y = (*(volatile uint32_t *) 0x38000084);
+
+   cnt_y += 1;
+  }
+  if(cnt_y == 11 -1){
+   if((*(volatile uint32_t *) 0x30000008)){
+    (*(volatile uint32_t*)0x2600000c) = ((*(volatile uint32_t *) 0x38000084) << 16);
+   }
+   break;
+  }
+ }
+
+ (*(volatile uint32_t*)0x2600000c) = (0x5a << 16);
+# 219 "counter_la_fir.c"
 }

@@ -1,0 +1,590 @@
+
+*** Running vivado
+    with args -log user_project_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source user_project_wrapper.tcl
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source user_project_wrapper.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/utils_1/imports/synth_1/user_project_wrapper.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/utils_1/imports/synth_1/user_project_wrapper.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top user_project_wrapper -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 36081
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11065] parameter 'IDX_W' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:52]
+WARNING: [Synth 8-11065] parameter 'AR_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_MEMA' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AW_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'SS_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_READX' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_WAIT' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_LAST' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SM_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_CALY' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_DONE11' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'RADDR' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'GETD' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'WAITMEM' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'SEND_VALID' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'DONE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_in' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:84]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_out' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:85]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_oeb' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:86]
+WARNING: [Synth 8-6901] identifier 'fir_begin_send_x_r' is used before its declaration [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:224]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'ready' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:596]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'count' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:597]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'rdata' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:598]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2416.105 ; gain = 373.707 ; free physical = 229 ; free virtual = 8134
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3390.059; parent = 2416.109; children = 973.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'user_project_wrapper' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v:32]
+INFO: [Synth 8-6157] synthesizing module 'user_proj_example' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:44]
+INFO: [Synth 8-6157] synthesizing module 'fir' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:77]
+WARNING: [Synth 8-6090] variable 'ar_state_nx' is written by both blocking and non-blocking assignments, entire logic could be removed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:89]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:71]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:136]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:118]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:189]
+INFO: [Synth 8-6157] synthesizing module 'bcd' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:780]
+INFO: [Synth 8-6155] done synthesizing module 'bcd' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:780]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:320]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:415]
+INFO: [Synth 8-6157] synthesizing module 'fir_mac_op' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:620]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:733]
+INFO: [Synth 8-6155] done synthesizing module 'fir_mac_op' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:620]
+INFO: [Synth 8-6155] done synthesizing module 'fir' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:2]
+INFO: [Synth 8-6157] synthesizing module 'bram11' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'bram11' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'user_proj_example' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:44]
+INFO: [Synth 8-6155] done synthesizing module 'user_project_wrapper' (0#1) [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v:32]
+WARNING: [Synth 8-7137] Register count_idx_ps_reg in module fir_mac_op has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:671]
+WARNING: [Synth 8-6014] Unused sequential element sm_tvalid_reg_reg was removed.  [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:322]
+WARNING: [Synth 8-3848] Net count in module/entity user_proj_example does not have driver. [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:90]
+WARNING: [Synth 8-3848] Net rready in module/entity user_proj_example does not have driver. [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:174]
+WARNING: [Synth 8-3848] Net arvalid in module/entity user_proj_example does not have driver. [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:175]
+WARNING: [Synth 8-3848] Net araddr in module/entity user_proj_example does not have driver. [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:176]
+WARNING: [Synth 8-7129] Port wvalid in module fir is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rready in module fir is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbs_sel_i[3] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbs_sel_i[2] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbs_sel_i[1] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wbs_sel_i[0] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[127] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[126] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[125] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[124] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[123] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[122] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[121] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[120] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[119] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[118] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[117] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[116] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[115] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[114] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[113] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[112] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[111] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[110] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[109] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[108] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[107] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[106] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[105] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[104] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[103] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[102] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[101] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[100] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[99] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[98] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[97] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[96] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[95] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[94] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[93] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[92] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[91] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[90] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[89] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[88] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[87] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[86] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[85] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[84] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[83] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[82] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[81] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[80] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[79] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[78] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[77] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[76] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[75] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[74] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[73] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[72] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[71] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[70] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[69] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[68] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[67] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[66] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[63] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[62] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[61] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[60] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[59] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[58] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[57] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[56] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[55] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[54] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[53] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[52] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[51] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[50] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[49] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[48] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[47] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[46] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[45] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[44] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[43] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[42] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[41] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[40] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[39] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[38] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[37] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[36] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[35] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[34] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[33] in module user_proj_example is either unconnected or has no load
+WARNING: [Synth 8-7129] Port la_data_in[32] in module user_proj_example is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2486.074 ; gain = 443.676 ; free physical = 330 ; free virtual = 8207
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3460.027; parent = 2486.078; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2503.887 ; gain = 461.488 ; free physical = 326 ; free virtual = 8202
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3477.840; parent = 2503.891; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2503.887 ; gain = 461.488 ; free physical = 326 ; free virtual = 8202
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3477.840; parent = 2503.891; children = 973.949
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2503.887 ; gain = 0.000 ; free physical = 323 ; free virtual = 8200
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+Finished Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2670.637 ; gain = 0.000 ; free physical = 189 ; free virtual = 8107
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2670.637 ; gain = 0.000 ; free physical = 189 ; free virtual = 8107
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 247 ; free virtual = 8162
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 244 ; free virtual = 8160
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 248 ; free virtual = 8164
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_ps_reg' in module 'fir_mac_op'
+INFO: [Synth 8-802] inferred FSM for state register 'ar_state_ps_reg' in module 'fir'
+INFO: [Synth 8-802] inferred FSM for state register 'aw_state_ps_reg' in module 'fir'
+INFO: [Synth 8-802] inferred FSM for state register 'ss_state_ps_reg' in module 'fir'
+INFO: [Synth 8-802] inferred FSM for state register 'sm_state_ps_reg' in module 'fir'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+                   RADDR |                           000010 |                              001
+                    GETD |                           000100 |                              010
+                 WAITMEM |                           001000 |                              011
+              SEND_VALID |                           010000 |                              100
+                    DONE |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_ps_reg' using encoding 'one-hot' in module 'fir_mac_op'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SS_IDLE |                              000 |                            00000
+                SS_RADDR |                              001 |                            00001
+                 SS_LAST |                              010 |                            00100
+                SS_READX |                              011 |                            00010
+                 SS_WAIT |                              100 |                            00011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ss_state_ps_reg' using encoding 'sequential' in module 'fir'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 SM_IDLE |                             0001 |                              000
+                SM_RADDR |                             0010 |                              001
+                 SM_CALY |                             0100 |                              010
+               SM_DONE11 |                             1000 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sm_state_ps_reg' using encoding 'one-hot' in module 'fir'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                AR_RADDR |                           000001 |                              001
+                   AR_AP |                           000010 |                              011
+                 AR_COEF |                           000100 |                              100
+                 AR_DLEN |                           001000 |                              010
+                 AR_MEMA |                           010000 |                              101
+                 AR_IDLE |                           100000 |                              000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ar_state_ps_reg' using encoding 'one-hot' in module 'fir'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 AW_IDLE |                            00001 |                              000
+                AW_RADDR |                            00010 |                              001
+                   AW_AP |                            00100 |                              011
+                 AW_DLEN |                            01000 |                              010
+                 AW_COEF |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'aw_state_ps_reg' using encoding 'one-hot' in module 'fir'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 236 ; free virtual = 8153
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
++---Registers : 
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               12 Bit    Registers := 7     
+	                1 Bit    Registers := 11    
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	              352 Bit	(11 X 32 bit)          RAMs := 2     
++---Muxes : 
+	   7 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 19    
+	   4 Input   32 Bit        Muxes := 2     
+	   3 Input   32 Bit        Muxes := 2     
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 20    
+	   6 Input   12 Bit        Muxes := 2     
+	   3 Input   12 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 3     
+	   4 Input    6 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 2     
+	   2 Input    5 Bit        Muxes := 2     
+	   4 Input    5 Bit        Muxes := 1     
+	  13 Input    4 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 8     
+	   4 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	  10 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 3     
+	   4 Input    2 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 17    
+	   3 Input    1 Bit        Muxes := 4     
+	   5 Input    1 Bit        Muxes := 4     
+	   6 Input    1 Bit        Muxes := 2     
+	   7 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP fir_mac_op/o_out_r_nx1, operation Mode is: A*B.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: Generating DSP fir_mac_op/o_out_r_nx1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: Generating DSP fir_mac_op/o_out_r_nx1, operation Mode is: A*B.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: Generating DSP fir_mac_op/o_out_r_nx1, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+DSP Report: operator fir_mac_op/o_out_r_nx1 is absorbed into DSP fir_mac_op/o_out_r_nx1.
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_A_reg' and it is trimmed from '12' to '6' bits. [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v:25]
+WARNING: [Synth 8-3332] Sequential element (mprj/fir_DUT/FSM_onehot_ar_state_ps_reg[0]) is unused and will be removed from module user_project_wrapper.
+WARNING: [Synth 8-3332] Sequential element (mprj/fir_DUT/FSM_onehot_ar_state_ps_reg[4]) is unused and will be removed from module user_project_wrapper.
+WARNING: [Synth 8-3332] Sequential element (mprj/fir_DUT/fir_mac_op/count_idx_ps_reg[11]_C) is unused and will be removed from module user_project_wrapper.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 196 ; free virtual = 8118
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1882.629; parent = 1665.541; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++---------------------+-----------------------+-----------+----------------------+----------------+
+|Module Name          | RTL Object            | Inference | Size (Depth x Width) | Primitives     | 
++---------------------+-----------------------+-----------+----------------------+----------------+
+|user_project_wrapper | mprj/tap_RAM/RAM_reg  | Implied   | 16 x 32              | RAM16X1D x 32  | 
+|user_project_wrapper | mprj/data_RAM/RAM_reg | Implied   | 16 x 32              | RAM16X1D x 32  | 
++---------------------+-----------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir         | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir         | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir         | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir         | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 181 ; free virtual = 8007
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2010.902; parent = 1797.149; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 188 ; free virtual = 7997
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2014.065; parent = 1803.493; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++---------------------+-----------------------+-----------+----------------------+----------------+
+|Module Name          | RTL Object            | Inference | Size (Depth x Width) | Primitives     | 
++---------------------+-----------------------+-----------+----------------------+----------------+
+|user_project_wrapper | mprj/tap_RAM/RAM_reg  | Implied   | 16 x 32              | RAM16X1D x 32  | 
+|user_project_wrapper | mprj/data_RAM/RAM_reg | Implied   | 16 x 32              | RAM16X1D x 32  | 
++---------------------+-----------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 175 ; free virtual = 7986
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 174 ; free virtual = 7976
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|fir         | A*B          | 17     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir         | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir         | PCIN>>17+A*B | 0      | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    12|
+|3     |DSP48E1  |     3|
+|4     |LUT2     |   159|
+|5     |LUT3     |    43|
+|6     |LUT4     |    74|
+|7     |LUT5     |    61|
+|8     |LUT6     |   146|
+|9     |RAM16X1D |    64|
+|10    |FDCE     |   106|
+|11    |FDPE     |    17|
+|12    |FDRE     |    93|
+|13    |LDC      |    12|
+|14    |IBUF     |    73|
+|15    |OBUF     |   176|
+|16    |OBUFT    |    64|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 171 ; free virtual = 7973
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.354; parent = 1804.782; children = 217.088
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3612.574; parent = 2638.625; children = 973.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 347 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2670.637 ; gain = 461.488 ; free physical = 227 ; free virtual = 8029
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 2670.637 ; gain = 628.238 ; free physical = 227 ; free virtual = 8029
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2670.637 ; gain = 0.000 ; free physical = 337 ; free virtual = 8144
+INFO: [Netlist 29-17] Analyzing 91 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2670.637 ; gain = 0.000 ; free physical = 262 ; free virtual = 8089
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  LDC => LDCE: 12 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 64 instances
+
+Synth Design complete, checksum: 29a68a06
+INFO: [Common 17-83] Releasing license: Synthesis
+53 Infos, 146 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:31 . Memory (MB): peak = 2670.637 ; gain = 939.371 ; free physical = 476 ; free virtual = 8304
+INFO: [Common 17-1381] The checkpoint '/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/user_project_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file user_project_wrapper_utilization_synth.rpt -pb user_project_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  9 23:05:56 2023...

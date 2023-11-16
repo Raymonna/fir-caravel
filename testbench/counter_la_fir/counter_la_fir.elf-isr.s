@@ -6,7 +6,7 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.file 0 "/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir" "../../firmware/isr.c"
+	.file 0 "/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir" "../../firmware/isr.c"
 	.align	2
 	.type	flush_cpu_icache, @function
 flush_cpu_icache:
@@ -484,8 +484,8 @@ isr:
 .LASF2:
 	.string	"signed char"
 	.section	.debug_line_str,"MS",@progbits,1
+.LASF1:
+	.string	"/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir"
 .LASF0:
 	.string	"../../firmware/isr.c"
-.LASF1:
-	.string	"/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir"
 	.ident	"GCC: (g2ee5e430018) 12.2.0"

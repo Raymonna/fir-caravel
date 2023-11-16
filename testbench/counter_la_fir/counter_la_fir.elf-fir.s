@@ -6,7 +6,7 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.file 0 "/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir" "fir.c"
+	.file 0 "/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir" "fir.c"
 	.section	.mprjram,"ax",@progbits
 	.align	2
 	.globl	initfir
@@ -240,5 +240,5 @@ fir:
 .LASF0:
 	.string	"fir.c"
 .LASF1:
-	.string	"/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir"
+	.string	"/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir"
 	.ident	"GCC: (g2ee5e430018) 12.2.0"

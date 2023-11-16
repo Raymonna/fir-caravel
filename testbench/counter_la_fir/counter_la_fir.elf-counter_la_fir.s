@@ -6,7 +6,7 @@
 	.text
 .Ltext0:
 	.cfi_sections	.debug_frame
-	.file 0 "/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir" "counter_la_fir.c"
+	.file 0 "/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir" "counter_la_fir.c"
 	.align	2
 	.type	flush_cpu_icache, @function
 flush_cpu_icache:
@@ -194,11 +194,11 @@ main:
 	.file 3 "counter_la_fir.c"
 	.loc 3 45 1
 	.cfi_startproc
-	addi	sp,sp,-16
-	.cfi_def_cfa_offset 16
-	sw	s0,12(sp)
+	addi	sp,sp,-32
+	.cfi_def_cfa_offset 32
+	sw	s0,28(sp)
 	.cfi_offset 8, -4
-	addi	s0,sp,16
+	addi	s0,sp,32
 	.cfi_def_cfa 8, 0
 	.loc 3 72 3
 	li	a5,-268419072
@@ -514,18 +514,126 @@ main:
 	addi	a4,a4,24
 	.loc 3 130 56
 	sw	a5,0(a4)
-	.loc 3 186 3
+	.loc 3 140 3
 	li	a5,637534208
 	addi	a5,a5,12
-	.loc 3 186 36
-	li	a4,-1420754944
+	.loc 3 140 36
+	li	a4,10813440
 	sw	a4,0(a5)
-	.loc 3 187 1
+	.loc 3 142 3
+	li	a5,805306368
+	.loc 3 142 38
+	li	a4,1
+	sw	a4,0(a5)
+.LBB2:
+	.loc 3 143 10
+	sw	zero,-20(s0)
+	.loc 3 143 2
+	j	.L12
+.L13:
+	.loc 3 144 53 discriminator 3
+	lui	a5,%hi(taps)
+	addi	a4,a5,%lo(taps)
+	lw	a5,-20(s0)
+	slli	a5,a5,2
+	add	a5,a4,a5
+	lw	a3,0(a5)
+	.loc 3 144 39 discriminator 3
+	lw	a4,-20(s0)
+	li	a5,234881024
+	addi	a5,a5,16
+	add	a5,a4,a5
+	slli	a5,a5,2
+	.loc 3 144 53 discriminator 3
+	mv	a4,a3
+	.loc 3 144 47 discriminator 3
+	sw	a4,0(a5)
+	.loc 3 143 26 discriminator 3
+	lw	a5,-20(s0)
+	addi	a5,a5,1
+	sw	a5,-20(s0)
+.L12:
+	.loc 3 143 19 discriminator 1
+	lw	a4,-20(s0)
+	li	a5,10
+	ble	a4,a5,.L13
+.LBE2:
+	.loc 3 146 6
+	sw	zero,-24(s0)
+	.loc 3 147 6
+	li	a5,1
+	sw	a5,-28(s0)
+.L19:
+	.loc 3 150 7
+	li	a5,805306368
+	addi	a5,a5,4
+	lw	a5,0(a5)
+	.loc 3 150 5
+	beq	a5,zero,.L14
+	.loc 3 151 5
+	li	a5,939524096
+	addi	a5,a5,128
+	.loc 3 151 40
+	lw	a4,-28(s0)
+	sw	a4,0(a5)
+	.loc 3 152 10
+	lw	a5,-28(s0)
+	addi	a5,a5,1
+	sw	a5,-28(s0)
+.L14:
+	.loc 3 154 7
+	li	a5,805306368
+	addi	a5,a5,8
+	lw	a5,0(a5)
+	.loc 3 154 5
+	beq	a5,zero,.L15
+	.loc 3 155 13
+	li	a5,939524096
+	addi	a5,a5,132
+	lw	a5,0(a5)
+	.loc 3 155 10
+	sw	a5,-32(s0)
+	.loc 3 157 10
+	lw	a5,-24(s0)
+	addi	a5,a5,1
+	sw	a5,-24(s0)
+.L15:
+	.loc 3 159 5
+	lw	a4,-24(s0)
+	li	a5,10
+	bne	a4,a5,.L19
+	.loc 3 160 8
+	li	a5,805306368
+	addi	a5,a5,8
+	lw	a5,0(a5)
+	.loc 3 160 6
+	beq	a5,zero,.L20
+	.loc 3 161 43
+	li	a5,939524096
+	addi	a5,a5,132
+	lw	a4,0(a5)
+	.loc 3 161 6
+	li	a5,637534208
+	addi	a5,a5,12
+	.loc 3 161 78
+	slli	a4,a4,16
+	.loc 3 161 39
+	sw	a4,0(a5)
+.L20:
+	.loc 3 163 4
 	nop
-	lw	s0,12(sp)
+	.loc 3 167 3
+	li	a5,637534208
+	addi	a5,a5,12
+	.loc 3 167 36
+	li	a4,5898240
+	sw	a4,0(a5)
+	.loc 3 219 1
+	nop
+	lw	s0,28(sp)
 	.cfi_restore 8
-	.cfi_def_cfa 2, 16
-	addi	sp,sp,16
+	.cfi_def_cfa 2, 32
+	addi	sp,sp,32
 	.cfi_def_cfa_offset 0
 	jr	ra
 	.cfi_endproc
@@ -536,13 +644,13 @@ main:
 	.file 5 "/opt/riscv/lib/gcc/riscv32-unknown-elf/12.2.0/include/stdint-gcc.h"
 	.section	.debug_info,"",@progbits
 .Ldebug_info0:
-	.4byte	0x14a
+	.4byte	0x188
 	.2byte	0x5
 	.byte	0x1
 	.byte	0x4
 	.4byte	.Ldebug_abbrev0
-	.byte	0x6
-	.4byte	.LASF19
+	.byte	0x7
+	.4byte	.LASF22
 	.byte	0x1d
 	.4byte	.LASF0
 	.4byte	.LASF1
@@ -573,8 +681,8 @@ main:
 	.byte	0x2
 	.byte	0x7
 	.4byte	.LASF7
-	.byte	0x7
-	.4byte	.LASF20
+	.byte	0x8
+	.4byte	.LASF23
 	.byte	0x5
 	.byte	0x34
 	.byte	0x1b
@@ -587,7 +695,7 @@ main:
 	.byte	0x8
 	.byte	0x7
 	.4byte	.LASF9
-	.byte	0x8
+	.byte	0x9
 	.byte	0x4
 	.byte	0x5
 	.string	"int"
@@ -595,10 +703,10 @@ main:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.LASF10
-	.byte	0x9
+	.byte	0xa
 	.4byte	0x6a
 	.4byte	0x88
-	.byte	0xa
+	.byte	0xb
 	.4byte	0x71
 	.byte	0xa
 	.byte	0
@@ -623,8 +731,8 @@ main:
 	.byte	0x5
 	.byte	0x3
 	.4byte	outputsignal
-	.byte	0xb
-	.4byte	.LASF21
+	.byte	0xc
+	.4byte	.LASF24
 	.byte	0x3
 	.byte	0x2c
 	.byte	0x6
@@ -632,66 +740,100 @@ main:
 	.4byte	.LFE318-.LFB318
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xd9
-	.byte	0xc
+	.4byte	0x117
+	.byte	0xd
 	.string	"j"
 	.byte	0x3
 	.byte	0x2e
 	.byte	0x6
 	.4byte	0x6a
-	.byte	0
+	.byte	0x3
+	.4byte	.LASF14
+	.byte	0x92
+	.4byte	0x6a
+	.byte	0x2
+	.byte	0x91
+	.byte	0x68
 	.byte	0x3
 	.4byte	.LASF15
+	.byte	0x93
+	.4byte	0x6a
+	.byte	0x2
+	.byte	0x91
+	.byte	0x64
+	.byte	0x3
+	.4byte	.LASF16
+	.byte	0x94
+	.4byte	0x6a
+	.byte	0x2
+	.byte	0x91
+	.byte	0x60
+	.byte	0xe
+	.4byte	.LBB2
+	.4byte	.LBE2-.LBB2
+	.byte	0xf
+	.string	"i"
+	.byte	0x3
+	.byte	0x8f
+	.byte	0xa
+	.4byte	0x6a
+	.byte	0x2
+	.byte	0x91
+	.byte	0x6c
+	.byte	0
+	.byte	0
+	.byte	0x4
+	.4byte	.LASF18
 	.byte	0x1a
 	.4byte	.LFB317
 	.4byte	.LFE317-.LFB317
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0xfa
-	.byte	0x4
+	.4byte	0x138
+	.byte	0x5
 	.string	"p"
 	.byte	0x1a
 	.byte	0x18
-	.4byte	0xfa
+	.4byte	0x138
 	.byte	0x2
 	.byte	0x91
 	.byte	0x6c
 	.byte	0
-	.byte	0xd
+	.byte	0x10
 	.byte	0x4
-	.4byte	0x107
+	.4byte	0x145
 	.byte	0x1
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF14
-	.byte	0xe
-	.4byte	0x100
-	.byte	0x3
-	.4byte	.LASF16
+	.4byte	.LASF17
+	.byte	0x11
+	.4byte	0x13e
+	.byte	0x4
+	.4byte	.LASF19
 	.byte	0x12
 	.4byte	.LFB316
 	.4byte	.LFE316-.LFB316
 	.byte	0x1
 	.byte	0x9c
-	.4byte	0x12d
-	.byte	0x4
+	.4byte	0x16b
+	.byte	0x5
 	.string	"c"
 	.byte	0x12
 	.byte	0x13
-	.4byte	0x100
+	.4byte	0x13e
 	.byte	0x2
 	.byte	0x91
 	.byte	0x6f
 	.byte	0
-	.byte	0x5
-	.4byte	.LASF17
+	.byte	0x6
+	.4byte	.LASF20
 	.byte	0x1c
 	.4byte	.LFB22
 	.4byte	.LFE22-.LFB22
 	.byte	0x1
 	.byte	0x9c
-	.byte	0x5
-	.4byte	.LASF18
+	.byte	0x6
+	.4byte	.LASF21
 	.byte	0xe
 	.4byte	.LFB21
 	.4byte	.LFE21-.LFB21
@@ -733,6 +875,25 @@ main:
 	.byte	0
 	.byte	0
 	.byte	0x3
+	.byte	0x34
+	.byte	0
+	.byte	0x3
+	.byte	0xe
+	.byte	0x3a
+	.byte	0x21
+	.byte	0x3
+	.byte	0x3b
+	.byte	0xb
+	.byte	0x39
+	.byte	0x21
+	.byte	0x6
+	.byte	0x49
+	.byte	0x13
+	.byte	0x2
+	.byte	0x18
+	.byte	0
+	.byte	0
+	.byte	0x4
 	.byte	0x2e
 	.byte	0x1
 	.byte	0x3f
@@ -761,7 +922,7 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0x4
+	.byte	0x5
 	.byte	0x5
 	.byte	0
 	.byte	0x3
@@ -779,7 +940,7 @@ main:
 	.byte	0x18
 	.byte	0
 	.byte	0
-	.byte	0x5
+	.byte	0x6
 	.byte	0x2e
 	.byte	0
 	.byte	0x3
@@ -804,7 +965,7 @@ main:
 	.byte	0x19
 	.byte	0
 	.byte	0
-	.byte	0x6
+	.byte	0x7
 	.byte	0x11
 	.byte	0x1
 	.byte	0x25
@@ -823,7 +984,7 @@ main:
 	.byte	0x17
 	.byte	0
 	.byte	0
-	.byte	0x7
+	.byte	0x8
 	.byte	0x16
 	.byte	0
 	.byte	0x3
@@ -838,7 +999,7 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0x8
+	.byte	0x9
 	.byte	0x24
 	.byte	0
 	.byte	0xb
@@ -849,7 +1010,7 @@ main:
 	.byte	0x8
 	.byte	0
 	.byte	0
-	.byte	0x9
+	.byte	0xa
 	.byte	0x1
 	.byte	0x1
 	.byte	0x49
@@ -858,7 +1019,7 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0xa
+	.byte	0xb
 	.byte	0x21
 	.byte	0
 	.byte	0x49
@@ -867,7 +1028,7 @@ main:
 	.byte	0xb
 	.byte	0
 	.byte	0
-	.byte	0xb
+	.byte	0xc
 	.byte	0x2e
 	.byte	0x1
 	.byte	0x3f
@@ -892,7 +1053,7 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0xc
+	.byte	0xd
 	.byte	0x34
 	.byte	0
 	.byte	0x3
@@ -907,7 +1068,33 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0xd
+	.byte	0xe
+	.byte	0xb
+	.byte	0x1
+	.byte	0x11
+	.byte	0x1
+	.byte	0x12
+	.byte	0x6
+	.byte	0
+	.byte	0
+	.byte	0xf
+	.byte	0x34
+	.byte	0
+	.byte	0x3
+	.byte	0x8
+	.byte	0x3a
+	.byte	0xb
+	.byte	0x3b
+	.byte	0xb
+	.byte	0x39
+	.byte	0xb
+	.byte	0x49
+	.byte	0x13
+	.byte	0x2
+	.byte	0x18
+	.byte	0
+	.byte	0
+	.byte	0x10
 	.byte	0xf
 	.byte	0
 	.byte	0xb
@@ -916,7 +1103,7 @@ main:
 	.byte	0x13
 	.byte	0
 	.byte	0
-	.byte	0xe
+	.byte	0x11
 	.byte	0x26
 	.byte	0
 	.byte	0x49
@@ -939,9 +1126,13 @@ main:
 	.section	.debug_line,"",@progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",@progbits,1
-.LASF19:
+.LASF16:
+	.string	"tmp_y"
+.LASF22:
 	.string	"GNU C17 12.2.0 -mabi=ilp32 -mtune=rocket -misa-spec=20191213 -march=rv32ima_zicsr -g -ffreestanding"
-.LASF17:
+.LASF15:
+	.string	"x_val"
+.LASF20:
 	.string	"flush_cpu_dcache"
 .LASF6:
 	.string	"unsigned char"
@@ -949,9 +1140,9 @@ main:
 	.string	"long unsigned int"
 .LASF7:
 	.string	"short unsigned int"
-.LASF16:
+.LASF19:
 	.string	"putchar"
-.LASF21:
+.LASF24:
 	.string	"main"
 .LASF10:
 	.string	"unsigned int"
@@ -961,19 +1152,21 @@ main:
 	.string	"long long unsigned int"
 .LASF12:
 	.string	"inputbuffer"
-.LASF18:
+.LASF14:
+	.string	"cnt_y"
+.LASF21:
 	.string	"flush_cpu_icache"
 .LASF13:
 	.string	"outputsignal"
 .LASF5:
 	.string	"long long int"
-.LASF14:
+.LASF17:
 	.string	"char"
-.LASF15:
+.LASF18:
 	.string	"print"
 .LASF3:
 	.string	"short int"
-.LASF20:
+.LASF23:
 	.string	"uint32_t"
 .LASF4:
 	.string	"long int"
@@ -983,5 +1176,5 @@ main:
 .LASF0:
 	.string	"counter_la_fir.c"
 .LASF1:
-	.string	"/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir"
+	.string	"/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir"
 	.ident	"GCC: (g2ee5e430018) 12.2.0"

@@ -1,0 +1,142 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  9 22:00:51 2023
+# Process ID: 25447
+# Current directory: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir
+# Command line: vivado
+# Log file: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir/vivado.log
+# Journal file: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 1753.926 MHz, CPU Physical cores: 14, Host memory: 16435 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1 -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v}
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v}
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+synth_design -dataflow -name dfv_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v] -no_script -reset -force -quiet
+remove_files  {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v}
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v] -no_script -reset -force -quiet
+remove_files  {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+add_files {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+update_files -from_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v -to_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v -filesets [get_filesets *]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+file mkdir /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1
+file mkdir /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new
+close [ open /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc w ]
+add_files -fileset constrs_1 /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+refresh_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_utilization -name utilization_1
+report_power -name {power_1}

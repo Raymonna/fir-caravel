@@ -1,5 +1,5 @@
 # 0 "../../firmware/isr.c"
-# 1 "/home/chenchingwen/Course2023/SoC/lab4-2/testbench/counter_la_fir//"
+# 1 "/home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir//"
 # 0 "<built-in>"
 # 0 "<command-line>"
 # 1 "../../firmware/isr.c"

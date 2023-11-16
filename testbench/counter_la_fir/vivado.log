@@ -1,0 +1,505 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Nov  9 22:00:51 2023
+# Process ID: 25447
+# Current directory: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir
+# Command line: vivado
+# Log file: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir/vivado.log
+# Journal file: /home/chenchingwen/Course2023/SoC/fir-cavarel/testbench/counter_la_fir/vivado.jou
+# Running On: ubuntu, OS: Linux, CPU Frequency: 1753.926 MHz, CPU Physical cores: 14, Host memory: 16435 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project project_1 /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1 -part xc7a35tcpg236-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
+set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+WARNING: [Board 49-151] The current board 'digilentinc.com::basys3:1.1' is from a local repo. The vivado install has a corresponding board with version greater than or equal to the local repo board. Please use boards from vivado install to avoid any upgrade/migrate issues
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:05:32 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:06:15 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:08:07 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v' cannot be added to the project because it already exists in the project, skipping this file
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v:64]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'user_proj_example' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v:38]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v:64]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'user_proj_example' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v:38]
+CRITICAL WARNING: [HDL 9-1206] Syntax error near ')' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v:239]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v:64]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'user_proj_example()' found in library 'xil_defaultlib'
+Duplicate found at line 38 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v
+Duplicate found at line 38 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+	(Active) Duplicate found at line 38 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'counter()' found in library 'xil_defaultlib'
+	(Active) Duplicate found at line 576 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v
+Duplicate found at line 576 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:09:40 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v:64]
+WARNING: [HDL 9-3756] overwriting previous definition of module 'user_proj_example' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v:38]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v:64]
+WARNING: [filemgmt 20-1318] Duplicate Design Unit 'user_proj_example()' found in library 'xil_defaultlib'
+Duplicate found at line 38 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v
+	(Active) Duplicate found at line 38 of file /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:10:18 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+CRITICAL WARNING: [HDL 9-3952] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v:64]
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:11:36 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v}
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:14:19 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'user_project_wrapper'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'user_project_wrapper' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj user_project_wrapper_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bram11
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fir
+INFO: [VRFC 10-311] analyzing module fir_mac_op
+INFO: [VRFC 10-311] analyzing module bcd
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module user_proj_example
+ERROR: [VRFC 10-3805] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'io_in' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:78]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'io_out' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:79]
+WARNING: [VRFC 10-9336] redeclaration of ANSI port 'io_oeb' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:80]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wb_clk_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+WARNING: [VRFC 10-3594] non-net port 'wb_clk_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wb_rst_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+WARNING: [VRFC 10-3594] non-net port 'wb_rst_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_stb_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+WARNING: [VRFC 10-3594] non-net port 'wbs_stb_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_cyc_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+WARNING: [VRFC 10-3594] non-net port 'wbs_cyc_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_we_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+WARNING: [VRFC 10-3594] non-net port 'wbs_we_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_sel_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+WARNING: [VRFC 10-3594] non-net port 'wbs_sel_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_dat_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+WARNING: [VRFC 10-3594] non-net port 'wbs_dat_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_adr_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+WARNING: [VRFC 10-3594] non-net port 'wbs_adr_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_ack_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:59]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'wbs_dat_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:60]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'la_data_in' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:63]
+WARNING: [VRFC 10-3594] non-net port 'la_data_in' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:63]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'la_data_out' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:64]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'la_oenb' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:65]
+WARNING: [VRFC 10-3594] non-net port 'la_oenb' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:65]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'io_in' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'io_out' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:69]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'io_oeb' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:70]
+WARNING: [VRFC 10-1103] net type must be explicitly specified for 'irq' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:73]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:91]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'irq' is not permitted [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:100]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'la_data_out' is not permitted [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:103]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:107]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:108]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:131]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:139]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:198]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:204]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:218]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:223]
+ERROR: [VRFC 10-845] illegal operand for operator && [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:249]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:270]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:282]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'wbs_dat_o' is not permitted [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:334]
+ERROR: [VRFC 10-3236] concurrent assignment to a non-net 'wbs_ack_o' is not permitted [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:335]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:344]
+ERROR: [VRFC 10-845] illegal operand for operator ~ [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:347]
+INFO: [#UNDEF] Sorry, too many errors..
+INFO: [USF-XSim-69] 'compile' step finished in '0' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: user_project_wrapper
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11065] parameter 'IDX_W' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:52]
+WARNING: [Synth 8-11065] parameter 'AR_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_MEMA' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AW_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'SS_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_READX' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_WAIT' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_LAST' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SM_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_CALY' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_DONE11' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'RADDR' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'GETD' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'WAITMEM' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'SEND_VALID' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'DONE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+ERROR: [Synth 8-10157] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_in' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:78]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_out' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:79]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_oeb' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:80]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wb_clk_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+ERROR: [Synth 8-9844] non-net port 'wb_clk_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wb_rst_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+ERROR: [Synth 8-9844] non-net port 'wb_rst_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_stb_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+ERROR: [Synth 8-9844] non-net port 'wbs_stb_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_cyc_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+ERROR: [Synth 8-9844] non-net port 'wbs_cyc_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_we_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+ERROR: [Synth 8-9844] non-net port 'wbs_we_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_sel_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+ERROR: [Synth 8-9844] non-net port 'wbs_sel_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_dat_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+ERROR: [Synth 8-9844] non-net port 'wbs_dat_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_adr_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+ERROR: [Synth 8-9844] non-net port 'wbs_adr_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_ack_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:59]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_dat_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:60]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'la_data_in' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:63]
+Failed to read verilog '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v'
+2 Infos, 30 Warnings, 0 Critical Warnings and 21 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:17:41 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:20:08 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+add_files -norecurse {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v}
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v' cannot be added to the project because it already exists in the project, skipping this file
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v' cannot be added to the project because it already exists in the project, skipping this file
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:25:24 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+synth_design -dataflow -name dfv_1
+Command: synth_design -dataflow -name dfv_1
+Starting synth_design
+Using part: xc7a35tcpg236-1
+Top: user_project_wrapper
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11065] parameter 'IDX_W' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:52]
+WARNING: [Synth 8-11065] parameter 'AR_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AR_MEMA' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:58]
+WARNING: [Synth 8-11065] parameter 'AW_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_DLEN' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_AP' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'AW_COEF' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:173]
+WARNING: [Synth 8-11065] parameter 'SS_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_READX' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_WAIT' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SS_LAST' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:257]
+WARNING: [Synth 8-11065] parameter 'SM_IDLE' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_RADDR' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_CALY' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'SM_DONE11' becomes localparam in 'fir' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:360]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'RADDR' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'GETD' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'WAITMEM' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'SEND_VALID' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+WARNING: [Synth 8-11065] parameter 'DONE' becomes localparam in 'fir_mac_op' with formal parameter declaration list [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v:655]
+ERROR: [Synth 8-10157] use of undefined macro 'MPRJ_IO_PADS' [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:68]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_in' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:78]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_out' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:79]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'io_oeb' is not allowed [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:80]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wb_clk_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+ERROR: [Synth 8-9844] non-net port 'wb_clk_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:51]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wb_rst_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+ERROR: [Synth 8-9844] non-net port 'wb_rst_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:52]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_stb_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+ERROR: [Synth 8-9844] non-net port 'wbs_stb_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:53]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_cyc_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+ERROR: [Synth 8-9844] non-net port 'wbs_cyc_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:54]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_we_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+ERROR: [Synth 8-9844] non-net port 'wbs_we_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:55]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_sel_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+ERROR: [Synth 8-9844] non-net port 'wbs_sel_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:56]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_dat_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+ERROR: [Synth 8-9844] non-net port 'wbs_dat_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:57]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_adr_i' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+ERROR: [Synth 8-9844] non-net port 'wbs_adr_i' cannot be of mode input [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:58]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_ack_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:59]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'wbs_dat_o' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:60]
+ERROR: [Synth 8-6735] net type must be explicitly specified for 'la_data_in' when default_nettype is none [/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v:63]
+Failed to read verilog '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+3 Infos, 30 Warnings, 0 Critical Warnings and 21 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:27:58 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v] -no_script -reset -force -quiet
+remove_files  {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v}
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v] -no_script -reset -force -quiet
+remove_files  {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+add_files {/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/fir.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.counter.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram11.v}
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/bram12.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.gcd.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/user_defines.v
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_proj_example.tmp.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:50:53 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v] -no_script -reset -force -quiet
+remove_files  /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:53:25 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:53:51 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v
+WARNING: [filemgmt 56-12] File '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v' cannot be added to the project because it already exists in the project, skipping this file
+update_files -from_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v -to_files /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v -filesets [get_filesets *]
+ERROR: [Vivado 12-3481] Cannot replace a file with itself: '/home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/header/defines.v'
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:56:48 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:58:33 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+add_files -norecurse /home/chenchingwen/Course2023/SoC/fir-cavarel/rtl/user/user_project_wrapper.v
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 22:59:29 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Thu Nov  9 23:00:10 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Nov  9 23:00:45 2023] Launched impl_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/impl_1/runme.log
+file mkdir /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1
+file mkdir /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new
+close [ open /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc w ]
+add_files -fileset constrs_1 /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc
+reset_run synth_1
+INFO: [Project 1-1160] Copying file /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/user_project_wrapper.dcp to /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+launch_runs synth_1 -jobs 4
+[Thu Nov  9 23:02:57 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Thu Nov  9 23:03:34 2023] Launched impl_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8239.863 ; gain = 0.000 ; free physical = 1983 ; free virtual = 10291
+INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+Finished Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8295.891 ; gain = 0.000 ; free physical = 1904 ; free virtual = 10206
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 64 instances
+
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/utils_1/imports/synth_1/user_project_wrapper.dcp with file /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/user_project_wrapper.dcp
+launch_runs synth_1 -jobs 4
+[Thu Nov  9 23:05:17 2023] Launched synth_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Thu Nov  9 23:06:06 2023] Launched impl_1...
+Run output will be captured here: /home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.runs/impl_1/runme.log
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+refresh_design
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 8841.973 ; gain = 0.000 ; free physical = 4147 ; free virtual = 10866
+INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+Finished Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+refresh_design
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+Finished Parsing XDC File [/home/chenchingwen/Course2023/SoC/fir-cavarel/project_1/project_1.srcs/constrs_1/new/fir.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_utilization -name utilization_1
+report_power -name {power_1}
+Command: report_power -name power_1
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 11 05:31:57 2023...

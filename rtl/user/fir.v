@@ -78,7 +78,7 @@ always @(*) begin
 					8'h0: begin//ap_*
 						ar_state_nx = AR_AP;
 					end
-					8'h20: begin//coef
+					8'h40: begin//coef
 						ar_state_nx = AR_COEF;
 					end
 					8'h10: begin//data len
@@ -137,7 +137,7 @@ always @(*) begin
 				8'h0: begin//ap_*
 					rdata_r = (data_Do & 32'hf);
 				end
-				8'h20: begin//coef
+				8'h40: begin//coef
 					rdata_r = tap_Do;
 				end
 				8'h10: begin//data len
@@ -203,7 +203,10 @@ always @(*) begin
 					8'h10: begin//data_length
 						aw_state_nx = AW_DLEN;
 					end
-					8'h20: begin//coef
+					8'h40: begin//coef
+						aw_state_nx = AW_COEF;
+					end
+					default: begin
 						aw_state_nx = AW_COEF;
 					end
 				endcase
@@ -322,7 +325,7 @@ always @(*) begin
 			ss_state_nx = SS_RADDR;
 		end
 		SS_RADDR: begin
-			ss_tready_r = 0;
+			ss_tready_r = 1;//@@
 			if(ss_tlast) begin
 				ss_state_nx = SS_LAST;
 			end else if(ss_tvalid) begin
@@ -384,6 +387,16 @@ end
 
 reg sm_ready_caly_r;
 wire sm_valid_gety;
+reg sm_valid_gety_r;
+always @(posedge axis_clk, negedge axis_rst_n) begin
+	if(!axis_rst_n) begin
+		sm_valid_gety_r <= 0;
+	end else begin
+		sm_valid_gety_r <= sm_valid_gety;
+	end
+end
+
+
 
 reg sm_tvalid_r, sm_tlast_r;
 reg [pDATA_WIDTH-1:0] sm_tdata_r;
@@ -422,7 +435,7 @@ always @(*) begin
 		end
 		SM_CALY: begin
 			sm_ready_caly_r = 1;
-			if (sm_valid_gety) begin //TODO  get the desired output and go to the next state
+			if (sm_valid_gety_r && sm_tready) begin //TODO  get the desired output and go to the next state
 				sm_tdata_r = sm_fir_mac_out;
 				sm_tvalid_r = 1;
 				//sm_state_nx = SM_RADDR;
@@ -434,10 +447,12 @@ always @(*) begin
 		
 		end
 		SM_DONE11: begin
+			//$display("\033[35mFIR sm finish 1 yout \033[0m");
 			sm_state_nx = SM_RADDR;
 		end
 	endcase
 end
+
 
 wire sm_data_EN, sm_tap_EN;
 wire	[(pADDR_WIDTH-1):0]	sm_data_A, sm_tap_A;
@@ -554,7 +569,7 @@ always @(*) begin
 	end else if(ar_state_ps == AR_MEMA) begin
 		data_EN_r = 1;
 		data_A_r = 4'd10;
-	end else if(ss_state_ps == SS_READX) begin
+	end else if(ss_state_nx == SS_READX) begin//@@
 		data_EN_r = 1;
 		data_WE_r = 4'hf;
 		data_Di_r = ss_tdata;
@@ -613,7 +628,7 @@ module fir_mac_op#(
 	input 		  		 i_rst_n,
 	
 	
-	output [pDATA_WIDTH:0] 		 o_out,
+	output [(pDATA_WIDTH-1):0] 		 o_out,
 	output 				 o_valid,
 	
     	output  wire                     data_EN,
@@ -736,6 +751,7 @@ always @(*) begin
 			 	tap_A_r = (count_idx_10base << 2);//TODO
 			 	state_nx = WAITMEM;	
 			end else begin
+				//$display("\033[35mfir_mac_op begin to compute the yout\033[0m");
 				state_nx = SEND_VALID;
 			end
 		end
@@ -746,6 +762,8 @@ always @(*) begin
 			state_nx = GETD;	
 		end
 		SEND_VALID: begin
+		    
+		    //$display("\033[32mfir_mac_op finish yout compute \033[0m");
 			o_valid_r = 1;
 			state_nx = DONE;// NOTICE THAT need to put down the i_ready
 		end
@@ -789,8 +807,38 @@ always @(*) begin
 		default: o_out_r = 12'd0;
 	endcase
 end
+endmodule
+/*
+module bcd_modified#(
+    parameter DATA_W = 12
+    )(
+    input [DATA_W-1:0]  i_in,
+    output [DATA_W-1:0] o_out
+);
+reg [DATA_W-1:0] o_out_r;
+assign o_out = o_out_r;
 
 
+integer i;
+always @(*) begin
+    case(i_in)
+        12'b000_0000_0001: o_out_r = 12'd0;
+        12'b000_0000_0010: o_out_r = 12'd1;
+        12'b000_0000_0100: o_out_r = 12'd2;
+        12'b000_0000_1000: o_out_r = 12'd3;
+        12'b000_0001_0000: o_out_r = 12'd4;
+
+        12'b000_0010_0000: o_out_r = 12'd5;
+        12'b000_0100_0000: o_out_r = 12'd6;
+        12'b000_1000_0000: o_out_r = 12'd7;
+        12'b001_0000_0000: o_out_r = 12'd8;
+        12'b010_0000_0000: o_out_r = 12'd9;
+
+        12'b100_0000_0000: o_out_r = 12'd10;
+        12'b1000_0000_0000: o_out_r = 12'd11;
+        default: o_out_r = 12'd0;
+    endcase
+end
 
 endmodule
-
+*/

@@ -153,15 +153,51 @@ module counter_la_fir_tb;
 		$display("%c[0m",27);
 		$finish;
 	end
-
+	reg [31:0] start_time, end_time;
 	initial begin
 		wait(checkbits == 16'hAB40);
 		$display("LA Test 1 started");
 		//wait(checkbits == 16'h2222);
 		//$display("slave(user project) x valid to send the data");	
-		wait(checkbits == 16'hAB61);
+		
+		wait(checkbits == 16'ha5);
+		$display("\033[35mStart time = %d\033[0m", $time);
+		start_time = $time;
+		
+		wait($signed(checkbits) >  16'd200);
+		$display("Success! final y == %d", $signed(checkbits));
+		
+		wait(checkbits == 16'h5a);
+		$display("Finish time = %d", $time);
+		end_time = $time;
+		
+		$display("the total comsumption time = %d", end_time - start_time);
+/*
+		wait($signed(checkbits) == -32'sd29);
+		$display("Success! checkbits == %d", $signed(checkbits));
+		wait($signed(checkbits) == -32'sd25);
+		$display("Success! checkbits == %d", $signed(checkbits));
+		wait($signed(checkbits) == 32'sd35);
+		$display("Success! checkbits == %d", $signed(checkbits));
+
+		wait($signed(checkbits) == 32'd158);
+		$display("Success! checkbits == %d", $signed(checkbits));
+		wait($signed(checkbits) == 32'd337);
+		$display("Success! checkbits == %d", $signed(checkbits));
+		wait($signed(checkbits) == 32'd539);
+		$display("Success! checkbits == %d", $signed(checkbits));
+		wait($signed(checkbits) == 32'd732);
+		$display("\033[30mSuccess! checkbits == %d\033[0m", $signed(checkbits));
+*/		
+		//wait($signed(checkbits) == 16'd915);
+		//$display("Success! checkbits == %d\033[0m", $signed(checkbits));
+		$display("Success!!");
+
+
+/*
+		wait(checkbits == 16'hAB51);
 		$display("Finish ADD1");
-		wait(checkbits == 16'hAB62);
+		wait(checkbits == 16'hAB52);
 		$display("Finish ADD2");
 
 		//wait(checkbits == 16'd40);
@@ -176,6 +212,7 @@ module counter_la_fir_tb;
 		wait(checkbits == 16'hAB51);
 		$display("LA Test 2 passed");
 		#10000;
+*/
 		$finish;
 	end
 
